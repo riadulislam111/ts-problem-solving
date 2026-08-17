@@ -81,5 +81,24 @@ const stringContainer: Container<string> = {
 // console.log(numberContainer);
 // console.log(stringContainer);
 
+
+
+
 // Problem 7
+interface HasId {
+    id: number;
+}
+
+function findById<T extends HasId>(
+    item: T[],
+    id: number
+){
+return item.find((tem) => tem.id === id)
+}
+
+const result = (findById([{ id: 1, name: "A" }, { id: 2, name: "B" }], 2
+));
+
+console.log(result);
+
 

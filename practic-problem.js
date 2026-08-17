@@ -29,5 +29,8 @@ const numberContainer = {
 const stringContainer = {
     item: "Books",
 };
-console.log(numberContainer);
-console.log(stringContainer);
+function findById(item, id) {
+    return item.find((tem) => tem.id === id);
+}
+const result = (findById([{ id: 1, name: "A" }, { id: 2, name: "B" }], 2));
+console.log(result);
