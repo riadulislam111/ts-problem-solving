@@ -99,6 +99,55 @@ return item.find((tem) => tem.id === id)
 const result = (findById([{ id: 1, name: "A" }, { id: 2, name: "B" }], 2
 ));
 
-console.log(result);
+// console.log(result);
 
 
+
+
+
+// Problem 8
+enum OrderStatus {
+    Placed= "PLACED",
+    Shipped= "SHIPPED",
+    Delivered= "DELIVERED",
+    Cancelled= "CANCELLED"
+}
+
+function orderStatus(order: OrderStatus){
+    if(order === OrderStatus.Shipped) {
+        return `Current status: ${OrderStatus.Shipped}`;
+    }
+}
+
+// console.log(orderStatus(OrderStatus.Shipped));
+
+
+// Problem 9
+const appConfig = {
+    theme: "dark",
+    version: 2
+} as const ;
+
+// appConfig.theme = "light";
+
+const colors = ["red", "green", "blue"] as const;
+
+type Color = typeof colors[number];
+
+
+// Problem 10
+interface Employee {
+    name: string;
+    id: number;
+    salary: number;
+    department: string;
+}
+
+function updateEmployee(updates: Partial<Employee>): void {
+    console.log(updates);
+}
+
+type EmployeeBasicInfo = Pick<Employee, "name" | "id">;
+type EmployeePublicDetails = Omit<Employee, "salary">;
+
+updateEmployee({name: "Rafi"});

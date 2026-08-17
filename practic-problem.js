@@ -33,4 +33,25 @@ function findById(item, id) {
     return item.find((tem) => tem.id === id);
 }
 const result = (findById([{ id: 1, name: "A" }, { id: 2, name: "B" }], 2));
-console.log(result);
+// console.log(result);
+// Problem 8
+var OrderStatus;
+(function (OrderStatus) {
+    OrderStatus["Placed"] = "PLACED";
+    OrderStatus["Shipped"] = "SHIPPED";
+    OrderStatus["Delivered"] = "DELIVERED";
+    OrderStatus["Cancelled"] = "CANCELLED";
+})(OrderStatus || (OrderStatus = {}));
+function orderStatus(order) {
+    if (order === OrderStatus.Shipped) {
+        return `Current status: ${OrderStatus.Shipped}`;
+    }
+}
+// console.log(orderStatus(OrderStatus.Shipped));
+// Problem 9
+const appConfig = {
+    theme: "dark",
+    version: 2
+};
+appConfig.theme = "light";
+console.log(appConfig.theme);
